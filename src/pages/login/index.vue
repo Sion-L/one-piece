@@ -1,27 +1,27 @@
 <script setup lang="ts">
 import LoginForm from './components/LoginForm.vue'
 
-const bgList = ref([
-  'bar_y',
-  'bar_x',
-  'line_gradient',
-  'line',
-  'funnel',
-  'heatmap',
-  'map',
-  'pie',
-  'radar',
-])
+// const bgList = ref([
+//   'bar_y',
+//   'bar_x',
+//   'line_gradient',
+//   'line',
+//   'funnel',
+//   'heatmap',
+//   'map',
+//   'pie',
+//   'radar',
+// ])
 // 根据图片名获取图片地址
-const getImageUrl = (name: string) => new URL(`../../assets/login/${name}.png`, import.meta.url).href
+//const getImageUrl = (name: string) => new URL(`../../assets/login/${name}.png`, import.meta.url).href
 // 创建一个被打乱的集合
-const shuffle = () => bgList.value = lodash.shuffle(bgList.value)
+//const shuffle = () => bgList.value = lodash.shuffle(bgList.value)
 // 图片名列表
-const carouselImgList = ['one', 'two', 'three']
+//const carouselImgList = ['one', 'two', 'three']
 // 动态样式绑定
 const formBgColor = computed(() => ['rgba(240, 240, 240, 0.7)', 'rgba(35,35,36, 0.7)'][Number(isDark.value)])
 // 4s换一张图片
-onMounted(() => useIntervalFn(shuffle, 4000))
+//onMounted(() => useIntervalFn(shuffle, 4000))
 </script>
 
 <template>
@@ -36,23 +36,23 @@ onMounted(() => useIntervalFn(shuffle, 4000))
           marginTop: '10vh',
         }"
       >
-        <a-carousel-item v-for="image in carouselImgList" :key="image">
+        <!-- <a-carousel-item v-for="image in carouselImgList" :key="image">
           <img
             :src="getImageUrl(image)" :style="{
               width: '100%',
             }"
           >
-        </a-carousel-item>
+        </a-carousel-item> -->
       </a-carousel>
       <div hfull flex-y-center relative>
         <div z-1 class="bg-img-box">
-          <TransitionGroup name="list-complete">
+          <!-- <TransitionGroup name="list-complete">
             <template v-for="item in bgList" :key="item">
               <div class="bg-img-box-li list-complete-item">
                 <img :src="getImageUrl(item)" alt="chart">
               </div>
             </template>
-          </TransitionGroup>
+          </TransitionGroup> -->
         </div>
         <LoginForm class="form" />
       </div>
@@ -92,7 +92,7 @@ onMounted(() => useIntervalFn(shuffle, 4000))
   flex-wrap: wrap;   // 避免多个图片挤在一次，flex-wrap设置拆分为多行
   width: 770px;
   // margin-right: -20px;   old
-  margin-right: -20px;
+  margin-right: -400px;
 
   &-li {
     img {

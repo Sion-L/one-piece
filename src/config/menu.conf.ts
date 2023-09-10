@@ -19,7 +19,7 @@ const iconMap: { [key: string]: Component } = {
 const defaultMenus: Menu[] = [
   {
     id: 101,
-    title: '首页',
+    title: '工作台',
     icon: 'home',
     path: '/dashboard',
   },

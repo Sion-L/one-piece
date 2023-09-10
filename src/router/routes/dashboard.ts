@@ -9,7 +9,7 @@ export default {
       name: 'Dashboard',
       component: () => import('~/pages/dashboard/index.vue'),
       meta: {
-        title: '首页',
+        title: '工作台',
         requiresAuth: true,
         cached: true,
       },
