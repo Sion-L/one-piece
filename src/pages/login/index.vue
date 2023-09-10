@@ -67,7 +67,7 @@ const formBgColor = computed(() => ['rgba(240, 240, 240, 0.7)', 'rgba(35,35,36, 
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: url('~/assets/login/bg.png') no-repeat 0 -120px;  // no-repeat 确保背景图不会被重复
+  //dbackground: url('~/assets/login/bg.png') no-repeat 0 -120px;  // no-repeat 确保背景图不会被重复
   overflow: hidden;
 }
 

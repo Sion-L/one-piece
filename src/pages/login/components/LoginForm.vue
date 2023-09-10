@@ -112,6 +112,9 @@ function submit({
 
 onMounted(() => useTimeoutFn(() => useLottie({
   containerId: '#lottie',
-  path: 'https://assets2.lottiefiles.com/packages/lf20_iVPQC8jyX2.json',
+  //path: 'https://assets2.lottiefiles.com/packages/lf20_iVPQC8jyX2.json',
+  //path: 'https://assets4.lottiefiles.com/packages/lf20_x62chJ.json',  // 飞机
+  path: 'https://lottie.host/9f5a2482-bb89-4335-99a9-85f5ad933d5e/ChiQt51fh0.json', // 山地车
+  //path: 'https://lottie.host/568dc44e-923a-4a04-9d2d-b18cd1294ef7/uUmRfy4dfg.json'  // devops
 }), 50))
 </script>
