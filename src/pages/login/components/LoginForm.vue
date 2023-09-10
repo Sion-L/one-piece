@@ -81,13 +81,8 @@ function submit({
   // ● finally：无论 Promise 是成功还是失败，都会执行的回调函数。
 
   // axios传递参数请求后端login接口,登录成功后，跳转至首页
-  formModel.username = values.username
-  formModel.password = values.password
   R.axios.post('http://192.168.137.44:8888/api/v1/auth/login', { username: formModel.username, password: formModel.password }).then(res => {
-    console.log(formModel);
-
     if (res.data === "登陆成功") {
-      console.log(res.data);
 
       authStore
         .login(data)
@@ -108,12 +103,11 @@ function submit({
           endLoading
           ANotification.error({
             title: '用户名或密码错误',
-            content: res.data,
+            content: `${res.data}`,
           })
         })
     }
   })
-
 }
 
 onMounted(() => useTimeoutFn(() => useLottie({
