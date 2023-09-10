@@ -103,7 +103,7 @@ function submit({
           endLoading
           ANotification.error({
             title: '用户名或密码错误',
-            content: `${res.data}`,
+            content: '',
           })
         })
     }

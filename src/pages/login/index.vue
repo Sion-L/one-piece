@@ -12,11 +12,15 @@ const bgList = ref([
   'pie',
   'radar',
 ])
+// 根据图片名获取图片地址
 const getImageUrl = (name: string) => new URL(`../../assets/login/${name}.png`, import.meta.url).href
+// 创建一个被打乱的集合
 const shuffle = () => bgList.value = lodash.shuffle(bgList.value)
+// 图片名列表
 const carouselImgList = ['one', 'two', 'three']
+// 动态样式绑定
 const formBgColor = computed(() => ['rgba(240, 240, 240, 0.7)', 'rgba(35,35,36, 0.7)'][Number(isDark.value)])
-
+// 4s换一张图片
 onMounted(() => useIntervalFn(shuffle, 4000))
 </script>
 
@@ -63,7 +67,7 @@ onMounted(() => useIntervalFn(shuffle, 4000))
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: url('~/assets/login/bg.png') no-repeat 0 -120px;
+  background: url('~/assets/login/bg.png') no-repeat 0 -120px;  // no-repeat 确保背景图不会被重复
   overflow: hidden;
 }
 
@@ -85,8 +89,9 @@ onMounted(() => useIntervalFn(shuffle, 4000))
 .bg-img-box {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap;   // 避免多个图片挤在一次，flex-wrap设置拆分为多行
   width: 770px;
+  // margin-right: -20px;   old
   margin-right: -20px;
 
   &-li {
@@ -100,6 +105,7 @@ onMounted(() => useIntervalFn(shuffle, 4000))
   }
 }
 
+// 宽度小于 1200px 时，动态调整，隐藏
 @media only screen and (max-width: 1200px) {
 
   .bg-img-box,
