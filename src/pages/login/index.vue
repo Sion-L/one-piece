@@ -1,3 +1,40 @@
+<template>
+  <div hw-screen p0 m0>
+    <div class="login-container m0">
+      <!-- <a-carousel
+        class="carousel-box" auto-play show-arrow="never" indicator-type="line" indicator-position="bottom"
+        :style="{
+          width: '25%',
+          minWidth: '400px',
+          height: '50vh',
+          marginTop: '10vh',
+        }"
+      >
+        <a-carousel-item v-for="image in carouselImgList" :key="image">
+          <img
+            :src="getImageUrl(image)" :style="{
+              width: '100%',
+            }"
+          >
+        </a-carousel-item>
+      </a-carousel> -->
+      <!--<div hfull flex-y-center relative>-->
+      <div hfull flex-y-center>
+        <div z-1 class="bg-img-box">
+          <!-- <TransitionGroup name="list-complete">
+            <template v-for="item in bgList" :key="item">
+              <div class="bg-img-box-li list-complete-item">
+                <img :src="getImageUrl(item)" alt="chart">
+              </div>
+            </template>
+          </TransitionGroup> -->
+        </div>
+        <LoginForm class="form" />
+      </div>
+    </div>
+  </div>
+</template>
+
 <script setup lang="ts">
 import LoginForm from './components/LoginForm.vue'
 
@@ -22,52 +59,57 @@ import LoginForm from './components/LoginForm.vue'
 const formBgColor = computed(() => ['rgba(240, 240, 240, 0.7)', 'rgba(35,35,36, 0.7)'][Number(isDark.value)])
 // 4s换一张图片
 //onMounted(() => useIntervalFn(shuffle, 4000))
+
+// onMounted(() => useTimeoutFn(() => useLottie({
+//   containerId: '.login-container',
+//   path: 'https://assets2.lottiefiles.com/packages/lf20_iVPQC8jyX2.json',
+//   //path: 'https://assets4.lottiefiles.com/packages/lf20_x62chJ.json',  // 飞机
+//   //path: 'https://lottie.host/9f5a2482-bb89-4335-99a9-85f5ad933d5e/ChiQt51fh0.json', // 山地车
+//   //path: 'https://lottie.host/568dc44e-923a-4a04-9d2d-b18cd1294ef7/uUmRfy4dfg.json'  // devops
+// }), 50))
 </script>
 
-<template>
-  <div hw-screen p0 m0>
-    <div class="login-container m0">
-      <a-carousel
-        class="carousel-box" auto-play show-arrow="never" indicator-type="line" indicator-position="bottom"
-        :style="{
-          width: '25%',
-          minWidth: '400px',
-          height: '50vh',
-          marginTop: '10vh',
-        }"
-      >
-        <!-- <a-carousel-item v-for="image in carouselImgList" :key="image">
-          <img
-            :src="getImageUrl(image)" :style="{
-              width: '100%',
-            }"
-          >
-        </a-carousel-item> -->
-      </a-carousel>
-      <div hfull flex-y-center relative>
-        <div z-1 class="bg-img-box">
-          <!-- <TransitionGroup name="list-complete">
-            <template v-for="item in bgList" :key="item">
-              <div class="bg-img-box-li list-complete-item">
-                <img :src="getImageUrl(item)" alt="chart">
-              </div>
-            </template>
-          </TransitionGroup> -->
-        </div>
-        <LoginForm class="form" />
-      </div>
-    </div>
-  </div>
-</template>
-
 <style scoped lang="less">
+// 把注释的部分替换成未注释的,再把上面的onmounted打开即可获得新的动态首页图,但是兼容不了手机端
+
+// .login-container {
+//   width: 90%;
+//   height: 100%;
+//   flex-direction: row-reverse;
+//   justify-content: flex-end;
+//   display: flex;
+//   //justify-content: space-around;
+//   align-items: center;
+//   //background: url('~/assets/login/bg.png') no-repeat 0 -120px;  // no-repeat 确保背景图不会被重复
+//   overflow: hidden;
+// }
+
+// .form {
+//   position: absolute;
+//  // display: flex;
+//   // justify-content: flex-end;
+//   // flex-direction: row;
+//   transform: translateX(-50%);
+//   left: 78%;
+//   width: 430px;
+//   height: 580px;
+//   margin-top: 20px;
+//   //margin-bottom: -20px;
+//   background-color: v-bind(formBgColor);
+//   backdrop-filter: blur(20px);
+//   padding: 10px;
+//   box-shadow: 0 0 20px 5px rgba(40, 40, 40, 0.3);
+//   border-radius: 8px;
+//   z-index: 2;
+// }
+
 .login-container {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  //dbackground: url('~/assets/login/bg.png') no-repeat 0 -120px;  // no-repeat 确保背景图不会被重复
+  //background: url('~/assets/login/bg.png') no-repeat 0 -120px;  // no-repeat 确保背景图不会被重复
   overflow: hidden;
 }
 
@@ -94,41 +136,41 @@ const formBgColor = computed(() => ['rgba(240, 240, 240, 0.7)', 'rgba(35,35,36, 
   // margin-right: -20px;   old
   margin-right: -400px;
 
-  &-li {
-    img {
-      margin-right: 20px;
-      margin-top: 20px;
-      width: 230px;
-      border-radius: 2 * 8px;
-      opacity: 0.9;
-    }
-  }
+  // &-li {
+  //   img {
+  //     margin-right: 20px;
+  //     margin-top: 20px;
+  //     width: 230px;
+  //     border-radius: 2 * 8px;
+  //     opacity: 0.9;
+  //   }
+  // }
 }
 
 // 宽度小于 1200px 时，动态调整，隐藏
 @media only screen and (max-width: 1200px) {
 
-  .bg-img-box,
-  .carousel-box {
-    display: none !important;
-  }
+  .bg-img-box
+  // .carousel-box {
+  //   display: none !important;
+  // }
 }
 
-.list-complete-item {
-  transition: all 1s;
-}
+// .list-complete-item {
+//   transition: all 1s;
+// }
 
-.list-complete-enter-from,
-.list-complete-leave-to {
-  opacity: 0;
-  transform: translateY(30px);
-}
+// .list-complete-enter-from,
+// .list-complete-leave-to {
+//   opacity: 0;
+//   transform: translateY(30px);
+// }
 
-.list-complete-leave-active {
-  position: absolute;
-}
+// .list-complete-leave-active {
+//   position: absolute;
+// }
 
-:deep(.arco-carousel-indicator-wrapper-bottom) {
-  background: none;
-}
+// :deep(.arco-carousel-indicator-wrapper-bottom) {
+//   background: none;
+// }
 </style>

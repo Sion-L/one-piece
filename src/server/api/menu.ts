@@ -12,6 +12,6 @@ export const MenuApi = {
     })
   },
   fetchMenuListByRoleId(_params: Record<string, number>) {
-    // return useRequest.get('/menuApi/menus', { urlParams: params }) as unknown as Promise<Result<Menu[]>>
+    //return useRequest.get('/menuApi/menus', { urlParams: params }) as unknown as Promise<Result<Menu[]>>
   },
 }
