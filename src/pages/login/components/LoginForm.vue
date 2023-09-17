@@ -81,7 +81,7 @@ function submit({
   // ● finally：无论 Promise 是成功还是失败，都会执行的回调函数。
 
   // axios传递参数请求后端login接口,登录成功后，跳转至首页
-  R.axios.post('http://192.168.137.44:8888/api/v1/auth/login', { username: formModel.username, password: formModel.password }).then(res => {
+  R.axios.post('http://192.168.137.44:8888/api/v1/auth/login', { en: formModel.username, password: formModel.password }).then(res => {
     if (res.data === "登陆成功") {
 
       authStore
